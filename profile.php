@@ -1,3 +1,18 @@
+  
+<?php 
+$con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
+mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
+$test_query = "SELECT * FROM user_info";
+$test_res =  mysqli_query($con,$test_query) or die(mysqli_error($con));
+while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
+  echo $arr['Name'];
+  echo str_repeat('&nbsp;', 5);
+  echo $arr['description'];
+  
+
+
+?>
+
 <html>
 
 <head>
@@ -19,6 +34,7 @@
         <a  href="home.php">Home</a>
         <a class="active" href="profile.php">Profile</a>
         <a href="portfolio.php">Portfolio</a>
+        <a href="login.php">login/signup</a>
       </div>
 
     <div class="user-data">
@@ -27,10 +43,9 @@
 
         <div class="card">
             <img src="img/pro.png" alt="profile" style="width:40%">
-            <h1>User-name: connect to databasae </h1>
-            <h1>Email connect to databasae </h1>
-            <h1>insta: connect to databasae </h1>
-            <p class="title">extra description</p>
+            <h1>User-name:<?php  echo $arr['Name']; ?></h1>
+            <h1>Email: <?php  echo $arr['email']; ?> </h1>
+            <p class="title">DESCRIPTION: <?php  echo $arr['description']; }?></p>
             <p>Links</p>
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-facebook"></i></a>
