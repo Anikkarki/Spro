@@ -25,11 +25,13 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
         </style>
     </head>
     <body>
+      <!--menu section start-->
         <div class="topnav">
             <a class="active" href="home.php">Home</a>
             <a href="profile.php">Profile</a>
             <a href="portfolio.php">Portfolio</a>
         </div>
+        <!--menu section finish-->
         
         <div class="article-show">
         <?php
