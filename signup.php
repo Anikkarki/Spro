@@ -1,99 +1,34 @@
-<?php
-
-?>
-<?php 
-$con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
-mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
-$q = "select * from user_info ";
-$res = mysqli_query($con,$q) or die(mysqli_error($con));
-$arr=mysqli_fetch_array($res,MYSQLI_ASSOC)
-?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Viewboard</title>
+  <title>Sign-up</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-
-<!--menu section start-->
-<div class="topnav">
-            <a href="home.php">Home</a>
-            <a href="profile.php">Profile</a>
-            <a class="active" href="portfolio.php">Portfolio</a>
-            <a href="login.php">login/signup</a>
-        </div>
-        <!--menu section finish-->
-
-		<!-- this is to ask inpute-->
-		<form method="post">
-              
-              
-			  <p>
-							  <label for="Name">First Name:</label>
-							  <input type="text" name="Name" id="Name">
-						  </p>
-
-						  
-
-						  <p>
-							  <label for="email">Email Address:</label>
-							  <input type="text" name="email" id="email">
-						  </p>
-
-
-
-			  <p>
-							  <label for="discription">discription:</label>
-							  <input type="text" name="discription" id="discription">
-						  </p>
-				
-				
-							
-							
-							
-			  <p>
-							  <label for="pass">pass:</label>
-							  <input type="text" name="pass" id="pass">
-						  </p>	
-				
-							
-						  <input type="submit" value="Submit">
-					  </form>
-		<!-- this is to ask inpute-->
-
-
-
-	<?php
-	 
-		$Name =  $_REQUEST['Name'];
-		$email = $_REQUEST['email'];
-        $discription = $_REQUEST['discription'];
-        $pass =  $_REQUEST['pass'];
-          
-        // Performing insert query execution
-        // here our table name is user_info
-        $sql = "INSERT INTO user_info  VALUES ('',$Name', 
-            '$email','$discription','$pass')";
-          
-        if(mysqli_query($con, $sql)){
-            echo "<h3>data stored in a database successfully." 
-                . " Please browse your localhost php my admin" 
-                . " to view the updated data</h3>"; 
-  
-            echo nl2br("\n $Name\n $email\n "
-                . "$discription\n $pass\n");
-        } else{
-            echo "ERROR: Hush! Sorry $sql. " 
-                . mysqli_error($con);
-        }
-          
-        // Close connection
-        mysqli_close($con);
-        ?>
-
+<br><br><br>
+<!-- start of content -->
+<div class="post-container">
+  <div class="post">
+  <div align="center" class="post-title"><h2>Please Fill Up the Given Form</h2></div>
+  <div class="login-style">
+      <div class="filler"></div>
+        <div class="filler"></div>
+      <form method="POST" action="backend/signup_process.php"  style="margin-left: 12%;">
+        <div class="login-user">Name:<br>
+          <input type="text" name="full_name" placeholder="Full Name">
+        </div><br>
+        
+        <div class="login-user">D.O.B.:<br>  <input type="text" name="dob" placeholder="yyyy/mm/dd"></div><br>
+        <div class="login-user">Username: <br><input type="text" name="username"></div><br>
+        <div class="login-pass">Password:<br>  <input type="password" name="password"></div><br>
+        <div class="login-pass">Re-enter Password: <br> <input type="password" name="repassword"></div><br>
+        <input type="submit" name="btn" value="Add Member" style="margin-left:25%;">
+      </form>
+      <div class="filler"></div>
+  </div>
+  <div class="filler"></div>
+  </div>
+  </div>
+<a href="login.php">Already have accpunt</a>
 <!-- main container <div> -->
-
-<!-- end of content -->
 </body>
 </html>

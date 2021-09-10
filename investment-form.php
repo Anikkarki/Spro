@@ -5,7 +5,8 @@
 <script>
 function validateForm() {
   let x = document.forms["tblForm"]["Name"].value;
-  if (x == "") {
+
+  if (x == "" ) {
     alert("Name must be filled out");
     return false;
   }
@@ -13,17 +14,18 @@ function validateForm() {
 }
 </script>
 </head>
-<body>
 
-    <!--menu section start-->
-    <div class="topnav">
-            <a href="home.php">Home</a>
-            <a href="profile.php">Profile</a>
-            <a class="active" href="portfolio.php">Portfolio</a>
-            <a href="login.php">login/signup</a>
-        </div>
-        <!--menu section finish-->
+<?php
+        $conn = mysqli_connect("localhost", "root", "", "paisa-op");
+		
+		// Check connection
+		if($conn === false){
+			die("ERROR: Could not connect. "
+				. mysqli_connect_error());
+		}
+    ?>
 
+<?php include('portion/menu.php'); ?>
             <br>
             <br>
     <form action="insert.php"  name="tblForm" method="post" onsubmit="return validateForm()">
@@ -39,8 +41,24 @@ function validateForm() {
             </p>
         
             <p>
-                <label for="C_name">category:</label>
-                <input type="dropdown" name="C_name" id="C_name" required>
+            <label for="C_name">Category : </label>
+            <?php
+                $query = "SELECT * FROM category";
+                $results = mysqli_query($conn,$query) or die(mysqli_error($conn));
+            ?>
+<select name="C_name" id="C_name">
+    <!-- <option value="rigatoni"></option>
+    <option value="dave"></option>
+    <option value="pumpernickel"></option>
+    <option value="reeses"></option> -->
+    <?php
+     while($arr = mysqli_fetch_array($results,MYSQLI_ASSOC)) {
+        echo "<option value=".$arr['C_name'].">".$arr['C_name']."</option>";
+    }
+?>
+    
+  
+</select>
             </p>
 
             <p>

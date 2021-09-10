@@ -28,14 +28,7 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
 
 </head>
 
-<body>
-
-    <div class="topnav">
-        <a  href="home.php">Home</a>
-        <a class="active" href="profile.php">Profile</a>
-        <a href="portfolio.php">Portfolio</a>
-        <a href="login.php">login/signup</a>
-      </div>
+<?php include('portion/menu.php'); ?>
 
     <div class="user-data">
         <link rel="stylesheet"
