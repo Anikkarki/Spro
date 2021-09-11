@@ -1,4 +1,13 @@
-  
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+  echo('hello');  
+}
+else{
+  header('location: login.php');
+}
+?>
+ 
 <?php 
 $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
 mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
