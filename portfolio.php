@@ -9,5 +9,8 @@
         <hr>
         <br>
         <a href="investment-form.php"><div class="button-inv-add"><button type="button">add investment</button></div></a>
+        <br>
+        <br>
+        <div></div>
     </body>
 </html>

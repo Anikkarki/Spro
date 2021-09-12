@@ -26,5 +26,23 @@
 
    <!--user table section -->
 
+   <table class="table table-striped">
+  <tr>
+      <th>S.no</th>
+      <th>Name</th>
+      <th>email</th>
+      <th>Action</th>
+  </tr>
+  <tr>
+      <td>S.no</td>
+      <td>Name</td>
+      <td>email</td>
+  </tr>
+  
+
+</table>
+
+   <!--user table section ends here-->
+
 </body>
 </html>
