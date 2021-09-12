@@ -1,7 +1,7 @@
 <?php 
   if(isset($_COOKIE['userNameApp'])){
   $user = $_COOKIE['userNameApp'];
-  die("found");
+  // die("found");
 }
 else {
   $user = '';
