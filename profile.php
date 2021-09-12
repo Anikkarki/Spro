@@ -1,22 +1,25 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
-  echo('hello');  
-}
-else{
+if(!isset($_SESSION['Name'])){
+//   echo('hello');  
   header('location: login.php');
 }
+else{
 ?>
- 
+
 <?php 
 $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
 mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
-$test_query = "SELECT * FROM user_info";
+
+
+$user = $_SESSION['Name'];
+$pass = $_SESSION['pass '];
+$test_query = "SELECT * FROM user_info WHERE Name = '$user' AND pass = '$pass'";
 $test_res =  mysqli_query($con,$test_query) or die(mysqli_error($con));
 while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
-  echo $arr['Name'];
-  echo str_repeat('&nbsp;', 5);
-  echo $arr['description'];
+//   echo $arr['Name'];
+//   echo str_repeat('&nbsp;', 5);
+//   echo $arr['description'];
   
 
 
@@ -25,16 +28,8 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
 <html>
 
 <head>
-    <title>
-
-    </title>
-
+    <title></title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-
-    </style>
-
 </head>
 
 <?php include('portion/menu.php'); ?>
@@ -70,3 +65,10 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
 </body>
 
 </html>
+
+
+
+
+<?php
+}
+?>
