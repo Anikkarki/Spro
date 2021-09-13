@@ -1,18 +1,7 @@
 <html>
     <head>
         <title>table</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script>
-function validateForm() {
-  let x = document.forms["tblForm"]["Name"].value;
-
-  if (x == "" ) {
-    alert("Name must be filled out");
-    return false;
-  }
-  
-}
-</script>
+        <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <?php
@@ -28,7 +17,7 @@ function validateForm() {
 <?php include('portion/menu.php'); ?>
             <br>
             <br>
-    <form action="insert.php"  name="tblForm" method="post" onsubmit="return validateForm()">
+    <form action="insert.php"  name="tblForm" method="post" >
 
             <p>
                 <label for="Name"> Name:</label>
@@ -37,7 +26,7 @@ function validateForm() {
   
             <p>
                 <label for="amount">Amount:</label>
-                <input type="number" name="amount" id="amount" required>
+                <input type="number" name="invested_amount" id="amount" required>
             </p>
         
             <p>

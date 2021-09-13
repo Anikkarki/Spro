@@ -40,7 +40,8 @@
           <div class="leftcolumn">
             <div class="card">
               <h2> <?php echo $arr['B_title']; ?></h2>
-              <h5><?php echo $arr['B_content']; ?>,<?php echo $arr['B_date']; ?></h5>
+              <h3><?php echo $arr['B_content']; ?></h3>
+              <h5><?php echo $arr['B_date']; ?></h5>
             </div>
           </div>
   
