@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['name'])){
+//   echo('hello');  
+  header('location: admin_login.php');
+}
+else{
+?> 
+
 <html>
 <head>
     <title>Admin Section</title>
@@ -6,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
 <!--blog section -->
+   <u><div align="right"><a href="core/logout_process.php">Logout</a></div></u>
    <div class="blog-write">
   <br>
   <br>
@@ -123,3 +133,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 
 </body>
 </html>
+
+<?php
+}
+?>

@@ -1,9 +1,24 @@
+<?php
+session_start();
+if(!isset($_SESSION['Name'])){
+//   echo('hello');  
+  header('location: login.php');
+}
+else{
+?> 
+
 <html>
     <head>
         <title>
         </title>
         <link rel="stylesheet" href="porstyle.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+        <script type = "text/javascript">  
+         function ediDb() {  
+            alert("You are Successfully Called the JavaScript function");  
+         }  
+</script>  
         
     </head>
 <?php include('portion/menu.php'); ?>
@@ -21,6 +36,7 @@
       <th>Invested Amount</th>
       <th>Category</th>
       <th>Payback Period</th>
+      <th>Action</th>
   </tr>
   <?php 
 $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
@@ -34,7 +50,8 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
       <td><?php echo $arr['Name']; ?></td>
       <td><?php echo $arr['invested_amount']; ?></td>
       <td><?php echo $arr['C_name']; ?></td>
-      <td><?php echo $arr['pbp']; }?></td>
+      <td><?php echo $arr['pbp']; ?></td>
+      <td> <input type="submit" name="Action" value="Action" onclick="ediDb()"><?php } ?></td>
   </tr>
   
 
@@ -46,3 +63,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
         <!--Show investment stop-->
     </body>
 </html>
+
+<?php 
+}
+?>

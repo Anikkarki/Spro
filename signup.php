@@ -7,6 +7,7 @@
 <body>
 <br><br><br>
 <!-- start of content -->
+<h3 align="center"><u>Sign Up</u></h3>
 <div class="post-container">
   <div class="post">
   <div align="center" class="post-title"><h2>Please Fill Up the Given Form</h2></div>
@@ -26,7 +27,7 @@
   <div class="filler"></div>
   </div>
   </div>
-<a href="login.php">Already have accpunt</a>
+<a href="login.php">Already have account</a>
 <!-- main container <div> -->
 </body>
 </html>

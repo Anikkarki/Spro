@@ -1,4 +1,12 @@
-  
+<?php
+session_start();
+if(!isset($_SESSION['Name'])){
+//   echo('hello');  
+  header('location: login.php');
+}
+else{
+?> 
+
 <!DOCTYPE html>
 <html>
 
@@ -51,3 +59,7 @@
         ?> 
     </body>
 </html>
+
+<?php
+}
+?>
