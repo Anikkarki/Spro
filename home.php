@@ -23,7 +23,6 @@ else{
     <?php  include('portion/menu.php'); ?>
 
     <?php 
-      session_start();
       $user = $_SESSION['Name'];
       $pass = $_SESSION['pass '];
       echo "THIS IS A TEST -> user: ".$user."<br>";

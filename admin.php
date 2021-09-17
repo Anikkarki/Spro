@@ -15,11 +15,11 @@ else{
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
 <!--blog section -->
-   <u><div align="right"><a href="core/logout_process.php">Logout</a></div></u>
+   <u><div align="right"><a href="core/logout_process.php"  style="color:red;">Logout</a></div></u>
    <div class="blog-write">
   <br>
   <br>
-  <h2>Write Blog </h2>
+  <h2 style="color:white; margin-left:10%">Write Blog </h2>
   <br>
    <form method="POST" action="core/admin_blog_process.php" >
    <div class="form-floating mb-3">
