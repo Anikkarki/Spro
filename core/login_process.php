@@ -12,6 +12,7 @@ if(mysqli_affected_rows($con)>0){
 	if(isset($_POST['remember_me'])){
 		setcookie("userNameApp",$user,time()+60*60*24*365);
 	}
+	$_SESSION['loggedIn'] = true;
 	header('location: ../home.php');//redirects to admin bash
 }
 else{

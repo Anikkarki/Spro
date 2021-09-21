@@ -44,11 +44,11 @@ $arr=mysqli_fetch_array($res,MYSQLI_ASSOC);
 <div class="login-style">
       <div class="filler"></div>
         <div class="filler"></div>
-      <form method="POST" action="core/return_update_process.php" enctype="multipart/form-data">
+      <form method="POST" action="core/return_update_process.php">
         <div class="login-user"><input type="hidden" name="id" value="<?php echo $arr['Inv_ID']?>"></div><br>
         <div class="login-user">Name  <input type="text" name="name" value="<?php echo $arr['Name']?>"></div><br>
         <div class="login-user">Invested amount  <input type="number" name="invested_amount" value="<?php echo $arr['invested_amount']?>"></div><br> 
-        <div class="login-user">return amount  <input type="number" name="return_amount" value="<?php echo $arr['invested_amount']?>"></div><br>
+        <div class="login-user">return amount  <input type="number" name="return_amount" value="<?php echo $arr['return_amount']?>"></div><br>
         <input type="submit" name="btn_post_return" value="Update" style="margin-left: 32%;"><br>
       </form>
   </div>

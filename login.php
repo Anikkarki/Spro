@@ -1,11 +1,14 @@
 <?php 
-  if(isset($_COOKIE['userNameApp'])){
+if(isset($_SESSION['loggedIn'])){
+  header('location: home.php');
+}
+if(isset($_COOKIE['userNameApp'])){
   $user = $_COOKIE['userNameApp'];
   // die("found");
 }
 else {
   $user = '';
- // die("not found");
+  // die("not found");
  // die($_COOKIE['userNameApp']);
 }
 ?>
