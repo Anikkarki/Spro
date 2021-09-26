@@ -12,9 +12,8 @@ else{
 
     <head>
 
-        <title>
-
-        </title>
+        <title>Home</title>
+        <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" href="hstyle.css">
         <style>
 
@@ -25,8 +24,7 @@ else{
     <?php 
       $user = $_SESSION['Name'];
       $pass = $_SESSION['pass '];
-      echo "THIS IS A TEST -> user: ".$user."<br>";
-      echo "THIS IS A TEST -> password: ".$pass."<br>";
+      echo "<h2> Welcome ".$user.".  Whats up?</h2><br>";
 
       $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
       mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
@@ -37,7 +35,7 @@ else{
         // echo $arr['B_title'];
 
     ?>
-        
+        <div class="container">
         <div class="article-show">
         <?php
          $title = "SELECT * FROM blog";
@@ -56,6 +54,7 @@ else{
         <?php
           }
         ?> 
+        </div>
     </body>
 </html>
 

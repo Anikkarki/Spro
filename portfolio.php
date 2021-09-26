@@ -11,7 +11,7 @@ else{
     <head>
         <title>
         </title>
-        <link href="css/bootstrap.css">
+        <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <link rel="stylesheet" href="porstyle.css">
        
@@ -24,6 +24,7 @@ else{
         
     </head>
 <?php include('portion/menu.php'); ?>
+<div class="container">
         <hr>
         <br>
         <a href="investment-form.php"><div class="button-inv-add"><button type="button">add investment</button></div></a>
@@ -54,7 +55,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
       <td><?php echo $arr['invested_amount']; ?></td>
       <td><?php echo $arr['C_name']; ?></td>
       <td><?php echo $arr['pbp']; ?></td>
-      <td><?php echo $arr['return_amount']; ?></td>
+      <td><?php echo $arr['sum_retn']; ?></td>
       <!-- <td> <input type="submit" name="Action" value="Action" onclick="ediDb()"></td> -->
      <?php echo "<td><a href='return_update_page.php?Inv_ID=".$arr['Inv_ID']."'>Action</a></td>"; }?>
   </tr>
@@ -66,6 +67,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 
         </div>
         <!--Show investment stop-->
+</div>
     </body>
 </html>
 

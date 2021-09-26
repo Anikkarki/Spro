@@ -13,10 +13,11 @@ else {
 <html>
     <head>
         <title>admin login</title>
+        <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+<div class="container">
 <br><br><br>
 <!-- start of content -->
 <div class="post-container">
@@ -36,6 +37,6 @@ else {
   </div>
 
 </div>
-
+</div>
 </body>
 </html>

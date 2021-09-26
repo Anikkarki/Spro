@@ -1,4 +1,5 @@
 <?php 
+$A_ID = $_SESSION['A_ID'];
 $B_title = $_POST['B_title'];
 $B_content = $_POST['B_content'];
 $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));

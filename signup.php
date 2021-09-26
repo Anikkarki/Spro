@@ -2,10 +2,12 @@
 <html>
 <head>
   <title>Sign-up</title>
+  <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <br><br><br>
+<div class="container">
 <!-- start of content -->
 <h3 align="center"><u>Sign Up</u></h3>
 <div class="post-container">
@@ -29,5 +31,6 @@
   </div>
 <a href="login.php">Already have account</a>
 <!-- main container <div> -->
+</div>
 </body>
 </html>

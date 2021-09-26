@@ -28,7 +28,7 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
 <html>
 
 <head>
-    <title></title>
+    <title>Profile Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
