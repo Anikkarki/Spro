@@ -10,5 +10,6 @@ $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
 mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
 $query = "UPDATE investment_table SET return_amount = $return_amount , total_amount=$total_amount , sum_retn=$sum_retn WHERE Inv_ID =$i";
 $result = mysqli_query($con,$query) or die(mysqli_error($con));
+echo "<script>alert('Your Record Sucessfully Updated.');</script>";
 header('location: ../portfolio.php')
 ?>

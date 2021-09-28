@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>table</title>
+        <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -17,18 +18,26 @@
 <?php include('portion/menu.php'); ?>
             <br>
             <br>
+            <div class="container">
+               <u> <h1>Fill Your Investment Details Here</h1></u>
+                <hr><hr>
+                <br>
     <form action="insert.php"  name="tblForm" method="post" >
 
             <p>
                 <label for="Name"> Name:</label>
                 <input type="text" name="Name" id="Name" required> 
             </p>
-  
+            <hr>
+            <br>
             <p>
                 <label for="amount">Amount:</label>
                 <input type="number" name="invested_amount" id="amount" required>
             </p>
         
+            <hr>
+            <br>
+
             <p>
             <label for="C_name">Category : </label>
             <?php
@@ -49,18 +58,22 @@
   
 </select>
             </p>
-
+            <hr>
+            <br>
             <p>
                 <label for="pbp">Payback Period</label>
                 <input type="date" name="pbp" id="pbp" required>
             </p>
 
+            <hr>
+            <br>
             <p>
                 <label for="max_pbp">Max Payback Period:</label>
                 <input type="date" name="max_pbp" id="max_pbp">
             </p>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="btn btn-success">
 </form>
+</div>
 </body>
     </html>

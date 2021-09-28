@@ -58,7 +58,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 ?>
   <tr>
       <td><?php echo $arr['B_title']; ?></td>
-      <?php echo "<td><a href='blog_update_page.php?B_ID=".$arr['B_ID']."'>EDIT</a></td>"; }?>
+      <?php echo "&nbsp;<td><a href='blog_update_page.php?B_ID=".$arr['B_ID']."'>EDIT</a> &nbsp;&nbsp; <a href='blog_delete_page.php?B_ID=".$arr['B_ID']."'>DELETE</a></td>"; }?>
   </tr>
    </table>
    </div>

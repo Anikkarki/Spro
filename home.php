@@ -20,7 +20,9 @@ else{
         </style>
     </head>
     <?php  include('portion/menu.php'); ?>
-
+    <div class="container">
+    <br>
+    <iframe src="img/giphy.gif" width="500" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     <?php 
       $user = $_SESSION['Name'];
       $pass = $_SESSION['pass '];
@@ -35,7 +37,7 @@ else{
         // echo $arr['B_title'];
 
     ?>
-        <div class="container">
+      
         <div class="article-show">
         <?php
          $title = "SELECT * FROM blog";

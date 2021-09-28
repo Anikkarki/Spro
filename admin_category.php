@@ -39,7 +39,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 ?>
   <tr>
       <td><?php echo $arr['C_name']; ?></td>
-      <?php echo "<td><a href='category_update_page.php?C_ID=".$arr['C_ID']."'>EDIT</a></td>"; }?>
+      <?php echo "<td><a href='category_update_page.php?C_ID=".$arr['C_ID']."'>EDIT</a>  &nbsp;&nbsp; <a href='category_delete_page.php?C_ID=".$arr['C_ID']."'>DELETE</a></td> </td>"; }?>
   </tr>
    </table>
    </div>

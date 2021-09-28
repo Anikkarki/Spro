@@ -25,9 +25,9 @@ else{
     </head>
 <?php include('portion/menu.php'); ?>
 <div class="container">
-        <hr>
-        <br>
-        <a href="investment-form.php"><div class="button-inv-add"><button type="button">add investment</button></div></a>
+<br>        
+<hr>
+        <a href="investment-form.php"><div class="button-inv-add"><button type="button" class="btn btn-primary">add investment</button></div></a>
         <br>
         <br>
         <!--Show investment -->
@@ -57,7 +57,7 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
       <td><?php echo $arr['pbp']; ?></td>
       <td><?php echo $arr['sum_retn']; ?></td>
       <!-- <td> <input type="submit" name="Action" value="Action" onclick="ediDb()"></td> -->
-     <?php echo "<td><a href='return_update_page.php?Inv_ID=".$arr['Inv_ID']."'>Action</a></td>"; }?>
+     <?php echo "<td><a href='return_update_page.php?Inv_ID=".$arr['Inv_ID']."'>EDIT</a> <a href='delete_investment_page.php?Inv_ID=".$arr['Inv_ID']."'> Delete</a></td>"; }?>
   </tr>
   
 
@@ -67,6 +67,45 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 
         </div>
         <!--Show investment stop-->
+<br>
+<br>
+<br>
+<br>
+<hr>
+<hr>
+
+        <!-- Suggestion from admin -->
+        <div class="container px-4">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3 border bg-light">
+       Content From Maximum Category total is shown.
+       <?php 
+$con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
+mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
+
+$test_query = "SELECT * FROM category where c_total>99";
+$test_res =  mysqli_query($con,$test_query) or die(mysqli_error($con));
+while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
+
+?>
+ <h1>category-name to invest in :<?php  echo $arr['C_name']; ?></h1>
+  <p>Most of our user with similar intrest and investment detail like your's are investing in this category and gaining much money </p>
+<?php } ?>
+    </div>
+    
+  </div>
+</div>
+        <!-- Suggestion from admin ends -->
+<br><br>
+        <!-- Total Returns -->
+        <div class="col">
+      <div class="p-3 border bg-light">
+        Total return of the individual invester.
+      </div>
+
+    </div>
+        <!-- Total Returns ends -->
 </div>
     </body>
 </html>
