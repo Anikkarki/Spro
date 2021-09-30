@@ -7,3 +7,4 @@
             <a href="core/logout_process.php" style="color:red;">Logout</a>
         </div>
         <!--menu section finish-->
+        

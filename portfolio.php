@@ -23,7 +23,7 @@ else{
 </script>   -->
         
     </head>
-<?php include('portion/menu.php'); ?>
+    <?php include('portion/menu.php'); ?>
 <div class="container">
 <br>        
 <hr>
