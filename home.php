@@ -22,8 +22,12 @@ else{
     <?php  include('portion/menu.php'); ?>
     <div class="container">
     <br>
-    <iframe src="img/giphy.gif" width="500" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    <?php 
+    <div class="container-hi" style="border: 1px; margin-left: 50vh;">
+    <iframe src="img/giphy.gif" width="500" height="280" frameBorder="0" class="giphy-embed" allowFullScreen>
+      
+    </iframe>
+    </div>
+   <?php 
       $user = $_SESSION['Name'];
       $pass = $_SESSION['pass '];
       echo "<h2> Welcome ".$user.".  Whats up?</h2><br>";
@@ -45,11 +49,17 @@ else{
         ?>
         <div class="row">
           <div class="leftcolumn">
+            <form method="POST" action="read_blog.php"> 
             <div class="card">
+              <input type="hidden" name="B_ID" value= <?php echo $arr['B_ID'];  ?> >
               <h2> <?php echo $arr['B_title']; ?></h2>
-              <h3><?php echo $arr['B_content']; ?></h3>
+              <h3 class="content-demo"><?php echo $arr['B_content']; ?></h3>
+              <input type="submit" name="Read more..." value="read_more" >
+              
               <h5><?php echo $arr['B_date']; ?></h5>
             </div>
+            </form>
+            
           </div>
   
         </div>

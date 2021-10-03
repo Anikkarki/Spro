@@ -79,7 +79,6 @@ while ($arr = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
   <div class="row gx-5">
     <div class="col">
      <div class="p-3 border bg-light">
-       Content From Maximum Category total is shown.
        <?php 
 $con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
 mysqli_select_db($con,'paisa-op') or die(mysqli_error($con));
@@ -89,8 +88,8 @@ $test_res =  mysqli_query($con,$test_query) or die(mysqli_error($con));
 while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
 
 ?>
- <h1>category-name to invest in :<?php  echo $arr['C_name']; ?></h1>
-  <p>Most of our user with similar intrest and investment detail like your's are investing in this category and gaining much money </p>
+ <h1>Category on fire :<?php  echo $arr['C_name']; ?></h1>
+  <p>Most of the investers are investing in this category and gaining much money. </p>
 <?php } ?>
     </div>
     
@@ -106,6 +105,12 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
 
     </div>
         <!-- Total Returns ends -->
+        <div class="graph-sec">
+        <form method="POST" action="graph.php"> 
+            <div class="card">
+              <input type="hidden" name="Inv_ID" value= <?php echo $arr['Inv_ID'];  ?> >
+              <input type="submit" name="View graph" value="view graph" >
+        </div>
 </div>
     </body>
 </html>

@@ -42,26 +42,14 @@ while ($arr = mysqli_fetch_array($test_res,MYSQLI_ASSOC)) {
             <img src="img/pro.png" alt="profile" style="width:40%">
             <h1>User-name:<?php  echo $arr['Name']; ?></h1>
             <h1>Email: <?php  echo $arr['email']; ?> </h1>
-            <p class="title">DESCRIPTION: <?php  echo $arr['description']; }?></p>
-            <p>Links</p>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
+            <p class="title">DESCRIPTION: <?php  echo $arr['description']; ?></p>
+            <?php echo "<td><a href='user_edit_page.php?U_ID=".$arr['U_ID']."'>EDIT</a></td>"; }?>
 
         </div>
 
     </div>
 
-    <div class="inv-detail">
-        <br>
-        <nav><u>INVESTMENT DETAILS</u></nav>
-        <table border="1">
-            <tr>
-                <td>
-
-                </td>
-            </tr>
-        </table>
-    </div>
+    
 </body>
 
 </html>

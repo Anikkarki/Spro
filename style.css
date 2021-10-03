@@ -97,3 +97,18 @@ body {
   background-color: dimgray;
   align:center;
 }
+.content-demo
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.prev-comment
+{
+
+  background-color: #fff;
+  padding: 10px;
+  margin:5px;
+}
